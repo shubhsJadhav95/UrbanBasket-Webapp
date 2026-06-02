@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket       = "terraform-s3-urbanbucket"
+    bucket       = "urbanbucket-terraform-s3"
     key          = "backend-locking"
     region       = "us-east-1"
     use_lockfile = true
