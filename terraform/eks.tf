@@ -31,7 +31,7 @@ module "eks" {
   access_entries = {
     # One access entry with a policy associated
     example = {
-      principal_arn = "arn:aws:iam::876997124628:user/terraform"
+      principal_arn = "arn:aws:iam::347026173735:user/devops-user"
 
       policy_associations = {
         example = {
@@ -77,7 +77,7 @@ module "eks" {
 
   eks_managed_node_group_defaults = {
 
-    instance_types = ["t3.large"]
+    instance_types = ["m7i-flex.large"]
 
     attach_cluster_primary_security_group = true
 
@@ -92,7 +92,7 @@ module "eks" {
       max_size     = 3
       desired_size = 1
 
-      instance_types = ["t3.large"]
+      instance_types = ["m7i-flex.large"]
       capacity_type  = "SPOT"
 
       disk_size                  = 35
