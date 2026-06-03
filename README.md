@@ -292,6 +292,16 @@ aws eks update-kubeconfig --region eu-west-1 --name tws-eks-cluster
 ```
 https://docs.aws.amazon.com/eks/latest/userguide/lbc-helm.html
 ```
+```
+eksctl create iamserviceaccount \
+    --cluster=tws-eks-cluster \
+    --namespace=kube-system \
+    --name=aws-load-balancer-controller \
+    --attach-policy-arn=arn:aws:iam::347026173735:policy/AWSLoadBalancerControllerIAMPolicy \
+    --override-existing-serviceaccounts \
+    --region us-esat-1 \
+    --approve
+```
 **11. Install the EBS CSI driver refering the below docs link**<br/>
 ```
 https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html#eksctl_store_app_data
@@ -320,7 +330,7 @@ global:
 
 configs:
   params:
-    server.insecure: true
+    server.insecure: true  //add manual at bottom doesnt exist in file
 
 server:
   ingress:
@@ -398,7 +408,7 @@ annotations:
     kubernetes.io/ingress.class: alb
 ```
 
-- **add record to route 53 “easyshop.devopsdock.site”**
+- **add record to route 53 “urbanbucket.devcloudzone.store”**
 
 - **Access your site now.**
 
