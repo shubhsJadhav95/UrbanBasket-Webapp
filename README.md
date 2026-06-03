@@ -408,7 +408,7 @@ annotations:
     kubernetes.io/ingress.class: alb
 ```
 
-- **add record to route 53 “urbanbucket.devcloudzone.store”**
+- **add record to route 53 “urbanbsket.devcloudzone.store”**
 
 - **Access your site now.**
 
