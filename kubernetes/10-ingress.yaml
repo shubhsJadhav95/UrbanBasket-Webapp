@@ -14,7 +14,7 @@ metadata:
     kubernetes.io/ingress.class: alb
 spec:
   rules:
-  - host: urbanbasket.devcloudzone.store
+  - host: urbanbucket.devcloudzone.store
     http:
       paths:
       - path: /
